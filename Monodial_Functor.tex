@@ -1,0 +1,32 @@
+\subsection{Symmetric Monoidal Functor}
+\label{subsec:symmetric_monoidal_functor}
+\begin{definition}
+    A symmetric monoidal functor between SMCs $(\mathbb{C},\bullet,1,\alpha,\lambda,\rho,\gamma)$ and 
+    $(\mathbb{C}',\bullet',1',\alpha',\lambda',\rho',\gamma')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{C}'$
+    equipped with
+    \begin{enumerate}
+        \item A morphism $m_{1'}: 1' \rightarrow F1$.
+        \item For any two objects A and B in $\mathbb{C}$, a natural transformation $m_{A,B}:F(A) \bullet 'F(B) \rightarrow F(A \bullet B)$
+    \end{enumerate}
+    These must satisfy the following diagrams:
+    \begin{center}
+        \begin{math}
+            \begin{array}{c}
+                diagrams here
+            \end{array}
+        \end{math}
+    \end{center}
+    However in this particular case, assuming that ! is a symmetrick monoidal (endo) functor means that ! comes equipped
+    with a natural transformation
+    \begin{center}
+        \begin{math}
+            m_{A,B}:!A \otimes !B \rightarrow !(A \otimes B)
+        \end{math}
+    \end{center}
+    and a morphism
+    \begin{center}
+        \begin{math}
+            m_I : I \rightarrow !I
+        \end{math}
+    \end{center}
+\end{definition}
