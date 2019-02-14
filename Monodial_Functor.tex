@@ -78,7 +78,7 @@
             \end{array}
         \end{math}
     \end{center}
-    However in this particular case, assuming that ! is a symmetrick monoidal (endo) functor means that ! comes equipped
+    However in this particular case, assuming that ! is a symmetric monoidal (endo) functor means that ! comes equipped
     with a natural transformation
     \begin{center}
         \begin{math}
@@ -89,6 +89,77 @@
     \begin{center}
         \begin{math}
             m_I : I \rightarrow !I
+        \end{math}
+    \end{center}
+    (where $m_I$ is just the nullary version of the natural transformation.)  The diagrmas given in the above definition become
+    the following:
+    \begin{center}
+        \begin{math}
+            \begin{array}{c}
+                \begin{array}{lr}
+                    \bfig
+                    \square|alrb|/->`<-`->`->/<600,500>[
+                        !I \otimes !A`
+                        !(I \otimes A)`
+                        I \otimes !A`
+                        !A;
+                        m_{I,A}`
+                        m_{I} \otimes id_{!A}`
+                        !(\lambda_A)`
+                        \lambda_{!A}
+                    ]
+                    \efig
+                    &
+                    \bfig
+                    \square|alrb|/->`<-`->`->/<600,500>[
+                        !A \otimes !I`
+                        !(A \otimes I)`
+                        !A \otimes I`
+                        !A;
+                        m_{A,I}`
+                        id_{!A} \otimes m_I`
+                        !(\rho_A)`
+                        \rho_{!A}
+                    ]
+                    \efig
+                \end{array}
+                \\\\
+                \bfig
+                \square|alrb|/->`<-``->/<1200,500>[
+                    (!A \otimes !B) \otimes !C`
+                    !(A \otimes  B) \otimes !C`
+                    !A \otimes (!B \otimes !C)`
+                    !A \otimes !(B \otimes  C);
+                    m_{A,B} \otimes id_{!C}`
+                    \alpha_{!A,!B,!C}`
+                    `
+                    id_{!A} \otimes m_{B,C}
+                ]
+                \square(1200,0)|alrb|/->``<-`->/<1200,500>[
+                    !(A \otimes  B) \otimes !C`
+                    !((A \otimes B)\otimes C)`
+                    !A \otimes !(B \otimes  C)`
+                    !(A \otimes (B \otimes C));
+                    m_{A \otimes B,C}`
+                    `
+                    !(\alpha_{A,B,C})`
+                    m_{A,B \otimes C}
+                ]
+                \efig
+                \\\\
+                \bfig
+                \square|alrb|<700,500>[
+                    !A \otimes !B`
+                    !(A \otimes B)`
+                    !B \otimes !A`
+                    !(B \otimes A);
+                    m_{A,B}`
+                    \gamma_{A,B}'`
+                    !(\gamma_{A,B})`
+                    m_{B,A}
+                ]
+                \efig
+            \end{array}
         \end{math}
     \end{center}
 \end{definition}
