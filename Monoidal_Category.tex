@@ -14,7 +14,85 @@
     \begin{center}
         \begin{math}
             \begin{array}{c}
-                diagrams here
+                \bfig
+                \ptriangle|all|/->`->`/<1500,500>[
+                    A \bullet (B \bullet (C \bullet D))`
+                    (A \bullet B) \bullet (C \bullet D)`
+                    A \bullet ((B \bullet C)\bullet D);
+                    \alpha_{A,B,C \bullet D}`
+                    id_A \bullet \alpha_{B,C,D}`
+                ]
+                \qtriangle(1500,0)|alr|/->``<-/<1500,500>[
+                    (A \bullet B) \bullet (C \bullet D)`
+                    ((A \bullet B)\bullet C)\bullet D`
+                    (A \bullet (B \bullet C))\bullet D;
+                    \alpha_{A \bullet B,C,C}`
+                    `
+                    \alpha_{A,B,C} \bullet id_D
+                    ]
+                \morphism|b|/->/<3000,0>[
+                    A \bullet ((B \bullet C)\bullet D)`
+                    (A \bullet(B \bullet C))\bullet D;
+                    \alpha_{A,B \bullet C,D}
+                    ]
+                \efig
+                \\\\
+                \bfig
+                \square|alrb|/->`->``->/<1000,500>[
+                    (A \bullet B) \bullet C`
+                    A \bullet (B \bullet C)`
+                    (B \bullet A) \bullet C`
+                    B \bullet (A \bullet C);
+                    \alpha_{A,B,C}`
+                    \gamma_{A,B} \bullet id_C`
+                    `
+                    \alpha_{B,A,C}
+                ]
+                \square(1000,0)|arlb|/->``->`->/<1000,500>[
+                    A \bullet (B \bullet C)`
+                    (B \bullet C) \bullet A`
+                    B \bullet (A \bullet C)`
+                    B \bullet (C \bullet A);
+                    \gamma_{A,B \bullet C}`
+                    `
+                    \alpha_{B,C,A}`
+                    id_B \bullet \gamma_{A,C}
+                ]
+                \efig
+                \\\\
+                \begin{array}{lr}
+                    \bfig
+                    \square|alrr|/->`->`->`=/<1000,500>[
+                        A \bullet (1 \bullet B)`
+                        (A \bullet 1) \bullet B`
+                        A \bullet B`
+                        A \bullet B;
+                        \alpha_{A,1,B}`
+                        id_A \bullet \lambda_B`
+                        \rho_A \bullet id_B`]
+                    \efig
+                    &
+                    \bfig
+                    \qtriangle|abr|/->`=`->/[
+                        A \bullet B`
+                        B \bullet A`
+                        A \bullet B;
+                        \gamma_{A,B}`
+                        `
+                        \gamma_{B,A}]
+                    \efig                    
+                \end{array}\\\\
+                \bfig
+                \square|alrb|/->`->`->`=/[
+                    A \bullet 1`
+                    1 \bullet A`
+                    A`
+                    A;
+                    \gamma_{A,1}`
+                    \rho_A`
+                    \lambda_A`
+                    ]
+                \efig
             \end{array}
         \end{math}
     \end{center}
