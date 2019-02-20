@@ -1,12 +1,12 @@
 \subsection{Symmetric Monoidal Functor}
 \label{subsec:symmetric_monoidal_functor}
 \begin{definition}
-    A symmetric monoidal functor between SMCs $(\mathbb{C},\bullet,1,\alpha,\lambda,\rho,\gamma)$ and 
-    $(\mathbb{C}',\bullet',1',\alpha',\lambda',\rho',\gamma')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{C}'$
+    A symmetric monoidal functor between SMCs $(\mathbb{C},\otimes,I,\alpha,\lambda,\rho,\gamma)$ and 
+    $(\mathbb{C}',\otimes',I',\alpha',\lambda',\rho',\gamma')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{C}'$
     equipped with
     \begin{enumerate}
-        \item A morphism $m_{1'}: 1' \rightarrow F1$.
-        \item For any two objects A and B in $\mathbb{C}$, a natural transformation $m_{A,B}:F(A) \bullet 'F(B) \rightarrow F(A \bullet B)$
+        \item A morphism $m_{I'}: I' \rightarrow FI$.
+        \item For any two objects A and B in $\mathbb{C}$, a natural transformation $m_{A,B}:F(A) \otimes 'F(B) \rightarrow F(A \otimes B)$
     \end{enumerate}
     These must satisfy the following diagrams:
     \begin{center}
@@ -15,12 +15,12 @@
                 \begin{array}{lr}
                     \bfig
                     \square|alrb|/->`<-`->`->/<700,500>[
-                        F1 \bullet ' FA`
-                        F(1 \bullet A)`
-                        1' \bullet ' FA`
+                        FI \otimes ' FA`
+                        F(I \otimes A)`
+                        I' \otimes ' FA`
                         FA;
-                        m_{1,A}`
-                        m_1 \bullet ' id_{FA}`
+                        m_{I,A}`
+                        m_I \otimes ' id_{FA}`
                         F(\lambda_A)`
                         \lambda_{FA}'
                     ]
@@ -28,12 +28,12 @@
                     &
                     \bfig
                     \square|alrb|/->`<-`->`->/<700,500>[
-                    FA \bullet ' F1`
-                    F (A \bullet 1)`
-                    FA \bullet ' 1'`
+                    FA \otimes ' FI`
+                    F (A \otimes I)`
+                    FA \otimes ' I'`
                     FA;
-                    m_{A,1}`
-                    id_{FA} \bullet ' m_{1'}`
+                    m_{A,I}`
+                    id_{FA} \otimes ' m_{I'}`
                     F(\rho_A)`
                     \rho_{FA}'
                     ]
@@ -42,33 +42,33 @@
                 \\\\
                 \bfig
                 \square|alrb|/->`<-``->/<1200,500>[
-                    (FA \bullet ' FB) \bullet ' FC`
-                    F(A \bullet B) \bullet ' FC`
-                    FA \bullet ' (FB \bullet ' FC)`
-                    FA \bullet ' F(B \bullet C);
-                    m_{A,B} \bullet ' id_{FC}`
+                    (FA \otimes ' FB) \otimes ' FC`
+                    F(A \otimes B) \otimes ' FC`
+                    FA \otimes ' (FB \otimes ' FC)`
+                    FA \otimes ' F(B \otimes C);
+                    m_{A,B} \otimes ' id_{FC}`
                     \alpha_{FA,FB,FC}'`
                     `
-                    id_{FA} \bullet ' m_{B,C}
+                    id_{FA} \otimes ' m_{B,C}
                 ]
                 \square(1200,0)|alrb|/->``<-`->/<1200,500>[
-                    F(A \bullet B) \bullet ' FC`
-                    F((A \bullet B)\bullet C)`
-                    FA \bullet ' F(B \bullet C)`
-                    F(A \bullet (B \bullet C));
-                    m_{A \bullet B,C}`
+                    F(A \otimes B) \otimes ' FC`
+                    F((A \otimes B)\otimes C)`
+                    FA \otimes ' F(B \otimes C)`
+                    F(A \otimes (B \otimes C));
+                    m_{A \otimes B,C}`
                     `
                     F(\alpha_{A,B,C})`
-                    m_{A,B \bullet C}
+                    m_{A,B \otimes C}
                 ]
                 \efig
                 \\\\
                 \bfig
                 \square|alrb|<700,500>[
-                    FA \bullet ' FB`
-                    F(A \bullet B)`
-                    FB \bullet ' FA`
-                    F(B \bullet A);
+                    FA \otimes ' FB`
+                    F(A \otimes B)`
+                    FB \otimes ' FA`
+                    F(B \otimes A);
                     m_{A,B}`
                     \gamma_{A,B}'`
                     F(\gamma_{A,B})`
@@ -166,19 +166,19 @@
 \subsection{Symmetric Monoidal Functor (Strict and Strong)}
 \label{subsec:symmetric_monoidal_functor_s_and_s}
 \begin{definition}
-    A symmetric monoidal functor, $(F,m_{A,B},m_{1'}): \mathbb{C} \rightarrow \mathbb{C}'$, is said to be
+    A symmetric monoidal functor, $(F,m_{A,B},m_{I'}): \mathbb{C} \rightarrow \mathbb{C}'$, is said to be
     \begin{enumerate}
-        \item Strict if $m_{A,B}$ and $m_{1'}$ are identities.
-        \item Strong if $m_{A,B}$ and $m_{1'}$ are natural isomorphisms.
+        \item Strict if $m_{A,B}$ and $m_{I'}$ are identities.
+        \item Strong if $m_{A,B}$ and $m_{I'}$ are natural isomorphisms.
     \end{enumerate}
     The equation in context for Dereliction gives us that
     \begin{center}
         \begin{math}
             \begin{array}{c}
                 \bfig
-                \morphism(0,500)|a|<500,0>[!A_1`!A_1;id_{!A_1}]
+                \morphism(0,500)|a|<500,0>[!A_I`!A_I;id_{!A_I}]
                 \qtriangle(500,0)|alr|<500,500>[
-                    !A_1`
+                    !A_I`
                     !B`
                     B;
                     (\epsilon_A;f)^*`
