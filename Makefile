@@ -30,6 +30,7 @@ pdf : main.pdf
 main.pdf : Makefile main.tex
 	$(PDFLATEX) -jobname=main main.tex
 	$(PDFLATEX) -jobname=main main.tex
+	$(BIBTEX) main
 	$(PDFLATEX) -jobname=main main.tex
 
 clean :

@@ -1,4 +1,5 @@
 \begin{definition}
+    \label{def:symmetric_monoidal_category}
     A symmetric monoidal catergory (SMC), $(\mathbb{C},\otimes,I,\alpha,\lambda,\rho,\gamma)$, is a category $\mathbb{C}$ 
     equippped with a bifunctor $\otimes:\mathbb{C}\times\mathbb{C}\rightarrow\mathbb{C}$ with a neutral element I and natural isomorphisms 
     $\alpha, \lambda, \rho,$ and $\gamma$:
@@ -102,11 +103,13 @@
             \end{array}
         \end{math}
     \end{center}
+    \cite{bierman1993:1}
 \end{definition}
 
-\subsection{Symmetric Monoidal Closed Category}
-\label{subsec:symmetric_monoidal_closded_category}
+
+
 \begin{definition}
+\label{def:symmetric_monoidal_closded_category}
     A symmetric monoidal closed category (SMCC), $(\mathbb{C},\otimes,\multimap,I,\alpha,\lambda,\rho,\gamma)$,
     is a SMC such that for all objects A in $\mathbb{C}$, the functor $-\otimes A$ has a specified right adjoint $A\multimap -$.
 \end{definition}
