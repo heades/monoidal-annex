@@ -5,13 +5,6 @@ OTT_FLAGS := -tex_wrap false -tex_show_meta false -picky_multiple_parses false
 SKIM := skim_revert.sh
 SKIMRevinPath := $(shell command -v $(SKIM) 2> /dev/null)
 
-TexFileName := spec
-OTTFileName := spec
-OTTFile := $(OTTFileName).ott
-OTTGen := $(OTTFileName)-inc.tex
-OTTOutputFile := $(TexFileName).tex
-OTTPrefix := NCG
-
 PDF := main.pdf
 
 all: pdf
@@ -27,10 +20,11 @@ pdf : main.pdf
 
 # Now this takes the full LaTex translation and compiles it using
 # pdflatex.
-main.pdf : Makefile main.tex
+main.pdf : Makefile main.tex Monoidal_Category.tex Symmetric_Monoidal_Categories.tex
 	$(PDFLATEX) -jobname=main main.tex
 	$(PDFLATEX) -jobname=main main.tex
 	$(BIBTEX) main
+	$(PDFLATEX) -jobname=main main.tex
 	$(PDFLATEX) -jobname=main main.tex
 
 clean :
