@@ -1,3 +1,60 @@
 \begin{definition}
-    
+    A monoidal category $(\mathbb{C},\otimes,I,\alpha,\lambda,\rho)$ is a category $\mathbb{C}$, a bifunctor $\otimes : \mathbb{C} x \mathbb{C} \rightarrow \mathbb{C}$, 
+    an object $I \in \mathbb{C}$, and three natural isomorphisms $\alpha,\lambda,\rho$.  Where,
+    \begin{center}
+        \begin{math}
+            \alpha = \alpha_{A,B,C}:A \otimes(B \otimes C) \cong (A \otimes B) \otimes C
+        \end{math}
+    \end{center}
+    is natural for all $A,B,C \in \mathbb{C}$ and the diagram
+    \begin{center}
+        \begin{math}
+            \bfig
+            \ptriangle|all|/->`->`/<1500,500>[
+                A \otimes (B \otimes (C \otimes D))`
+                (A \otimes B) \otimes (C \otimes D)`
+                A \otimes ((B \otimes C)\otimes D);
+                \alpha`
+                1 \otimes \alpha`
+            ]
+            \qtriangle(1500,0)|alr|/->``<-/<1500,500>[
+                (A \otimes B) \otimes (C \otimes D)`
+                ((A \otimes B)\otimes C)\otimes D`
+                (A \otimes (B \otimes C))\otimes D;
+                \alpha`
+                `
+                \alpha \otimes 1
+                ]
+            \morphism|b|/->/<3000,0>[
+                A \otimes ((B \otimes C)\otimes D)`
+                (A \otimes(B \otimes C))\otimes D;
+                \alpha
+                ]
+            \efig
+        \end{math}
+    \end{center}
+    commutes for all $A,B,C,D \in \mathbb{C}$.  $\gamma$ and $\rho$ are natural
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                \gamma_A : I \otimes A \cong A & \rho_A : A \otimes I \cong A
+            \end{array}
+        \end{math}
+    \end{center} 
+    for all objects $A \in \mathbb{C}$, the diagram
+    \begin{center}
+        \begin{math}
+            \bfig
+                    \square|alrr|/->`->`->`=/<1000,500>[
+                        A \otimes (I \otimes C)`
+                        (A \otimes I) \otimes C`
+                        A \otimes C`
+                        A \otimes C;
+                        \alpha`
+                        1 \otimes \lambda`
+                        \rho_A \otimes 1`]
+                    \efig
+        \end{math}
+    \end{center}
+    \cite{maclane1971}
 \end{definition}

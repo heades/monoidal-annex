@@ -113,3 +113,179 @@
     A symmetric monoidal closed category (SMCC), $(\mathbb{C},\otimes,\multimap,I,\alpha,\lambda,\rho,\gamma)$,
     is a SMC such that for all objects A in $\mathbb{C}$, the functor $-\otimes A$ has a specified right adjoint $A\multimap -$.
 \end{definition}
+
+
+\begin{definition}
+\label{def:symmetric_monoidal_functor}
+    A symmetric monoidal functor between SMCs $(\mathbb{C},\otimes,I,\alpha,\lambda,\rho,\gamma)$ and 
+    $(\mathbb{C}',\otimes',I',\alpha',\lambda',\rho',\gamma')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{C}'$
+    equipped with
+    \begin{enumerate}
+        \item A morphism $m_{I'}: I' \rightarrow FI$.
+        \item For any two objects A and B in $\mathbb{C}$, a natural transformation $m_{A,B}:F(A) \otimes 'F(B) \rightarrow F(A \otimes B)$
+    \end{enumerate}
+    These must satisfy the following diagrams:
+    \begin{center}
+        \begin{math}
+            \begin{array}{c}
+                \begin{array}{lr}
+                    \bfig
+                    \square|alrb|/->`<-`->`->/<700,500>[
+                        FI \otimes ' FA`
+                        F(I \otimes A)`
+                        I' \otimes ' FA`
+                        FA;
+                        m_{I,A}`
+                        m_I \otimes ' id_{FA}`
+                        F(\lambda_A)`
+                        \lambda_{FA}'
+                    ]
+                    \efig
+                    &
+                    \bfig
+                    \square|alrb|/->`<-`->`->/<700,500>[
+                    FA \otimes ' FI`
+                    F (A \otimes I)`
+                    FA \otimes ' I'`
+                    FA;
+                    m_{A,I}`
+                    id_{FA} \otimes ' m_{I'}`
+                    F(\rho_A)`
+                    \rho_{FA}'
+                    ]
+                    \efig
+                \end{array}
+                \\\\
+                \bfig
+                \square|alrb|/->`<-``->/<1200,500>[
+                    (FA \otimes ' FB) \otimes ' FC`
+                    F(A \otimes B) \otimes ' FC`
+                    FA \otimes ' (FB \otimes ' FC)`
+                    FA \otimes ' F(B \otimes C);
+                    m_{A,B} \otimes ' id_{FC}`
+                    \alpha_{FA,FB,FC}'`
+                    `
+                    id_{FA} \otimes ' m_{B,C}
+                ]
+                \square(1200,0)|alrb|/->``<-`->/<1200,500>[
+                    F(A \otimes B) \otimes ' FC`
+                    F((A \otimes B)\otimes C)`
+                    FA \otimes ' F(B \otimes C)`
+                    F(A \otimes (B \otimes C));
+                    m_{A \otimes B,C}`
+                    `
+                    F(\alpha_{A,B,C})`
+                    m_{A,B \otimes C}
+                ]
+                \efig
+                \\\\
+                \bfig
+                \square|alrb|<700,500>[
+                    FA \otimes ' FB`
+                    F(A \otimes B)`
+                    FB \otimes ' FA`
+                    F(B \otimes A);
+                    m_{A,B}`
+                    \gamma_{A,B}'`
+                    F(\gamma_{A,B})`
+                    m_{B,A}
+                ]
+                \efig
+            \end{array}
+        \end{math}
+    \end{center}
+    However in this particular case, assuming that ! is a symmetric monoidal (endo) functor means that ! comes equipped
+    with a natural transformation
+    \begin{center}
+        \begin{math}
+            m_{A,B}:!A \otimes !B \rightarrow !(A \otimes B)
+        \end{math}
+    \end{center}
+    and a morphism
+    \begin{center}
+        \begin{math}
+            m_I : I \rightarrow !I
+        \end{math}
+    \end{center}
+    (where $m_I$ is just the nullary version of the natural transformation.)  The diagrmas given in the above definition become
+    the following:
+    \begin{center}
+        \begin{math}
+            \begin{array}{c}
+                \begin{array}{lr}
+                    \bfig
+                    \square|alrb|/->`<-`->`->/<600,500>[
+                        !I \otimes !A`
+                        !(I \otimes A)`
+                        I \otimes !A`
+                        !A;
+                        m_{I,A}`
+                        m_{I} \otimes id_{!A}`
+                        !(\lambda_A)`
+                        \lambda_{!A}
+                    ]
+                    \efig
+                    &
+                    \bfig
+                    \square|alrb|/->`<-`->`->/<600,500>[
+                        !A \otimes !I`
+                        !(A \otimes I)`
+                        !A \otimes I`
+                        !A;
+                        m_{A,I}`
+                        id_{!A} \otimes m_I`
+                        !(\rho_A)`
+                        \rho_{!A}
+                    ]
+                    \efig
+                \end{array}
+                \\\\
+                \bfig
+                \square|alrb|/->`<-``->/<1200,500>[
+                    (!A \otimes !B) \otimes !C`
+                    !(A \otimes  B) \otimes !C`
+                    !A \otimes (!B \otimes !C)`
+                    !A \otimes !(B \otimes  C);
+                    m_{A,B} \otimes id_{!C}`
+                    \alpha_{!A,!B,!C}`
+                    `
+                    id_{!A} \otimes m_{B,C}
+                ]
+                \square(1200,0)|alrb|/->``<-`->/<1200,500>[
+                    !(A \otimes  B) \otimes !C`
+                    !((A \otimes B)\otimes C)`
+                    !A \otimes !(B \otimes  C)`
+                    !(A \otimes (B \otimes C));
+                    m_{A \otimes B,C}`
+                    `
+                    !(\alpha_{A,B,C})`
+                    m_{A,B \otimes C}
+                ]
+                \efig
+                \\\\
+                \bfig
+                \square|alrb|<700,500>[
+                    !A \otimes !B`
+                    !(A \otimes B)`
+                    !B \otimes !A`
+                    !(B \otimes A);
+                    m_{A,B}`
+                    \gamma_{A,B}'`
+                    !(\gamma_{A,B})`
+                    m_{B,A}
+                ]
+                \efig
+            \end{array}
+        \end{math}
+    \end{center}
+    \cite{bierman1993}
+\end{definition}
+
+\begin{definition}
+    A symmetric monoidal functor, $(F,m_{A,B},m_{I'}): \mathbb{C} \rightarrow \mathbb{C}'$, is said to be
+    \begin{enumerate}
+        \item Strict if $m_{A,B}$ and $m_{I'}$ are identities.
+        \item Strong if $m_{A,B}$ and $m_{I'}$ are natural isomorphisms.
+    \end{enumerate}
+    \cite{bierman1993}
+\end{definition}
