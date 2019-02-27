@@ -1,5 +1,5 @@
 \begin{definition}
-    A monoidal category $(\mathbb{C},\otimes,I,\alpha,\lambda,\rho)$ is a category $\mathbb{C}$, a bifunctor $\otimes : \mathbb{C} x \mathbb{C} \rightarrow \mathbb{C}$, 
+    A monoidal category $(\mathbb{C},\otimes,I,\alpha,\lambda,\rho)$ is a category $\mathbb{C}$, a bifunctor $\otimes : \mathbb{C} \times \mathbb{C} \rightarrow \mathbb{C}$, 
     an object $I \in \mathbb{C}$, and three natural isomorphisms $\alpha,\lambda,\rho$.  Where,
     \begin{center}
         \begin{math}
@@ -57,4 +57,146 @@
         \end{math}
     \end{center}
     \cite{maclane1971}
+\end{definition}
+
+
+\begin{definition}
+\label{def:monoidal_functor}
+    A monoidal functor or lax monoidal functor $(F,m)$ between monoidal categories $(\mathbb{C}, \otimes, I)$ and
+    $(\mathbb{D}, \otimes ', I')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{D}$ equipped with nathral transformations
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                m_{A,B}' : FA \otimes ' FB \rightarrow F(A \otimes B) & m'' : I' \rightarrow FI
+            \end{array}
+        \end{math}
+    \end{center}
+    where the following diagrams commute in the category $\mathbb{D}$ for all objects $A,B,C \in \mathbb{C}$
+    \begin{center}
+        \begin{math}
+            \begin{array}{c}
+                \bfig
+                    \square|alrr|/->`->`->`/<1500,500>[
+                        (FA \otimes ' FB) \otimes ' FC`
+                        FA \otimes ' (FB \otimes ' FC)`
+                        F(A \otimes B) \otimes ' FC`
+                        FA \otimes ' F(B \otimes C);
+                        \alpha '`
+                        m \otimes FC`
+                        FA \otimes m`]
+                    \square(0,-500)|alrb|/`->`->`->/<1500,500>[
+                        F(A \otimes B) \otimes ' FC`
+                        FA \otimes ' F(B \otimes C)`
+                        F((A \otimes B)\otimes C)`
+                        F(A \otimes (B \otimes C));
+                        `
+                        m`
+                        m`
+                        F \alpha
+                    ]
+                    
+                \efig
+                \\\\
+                \begin{array}{lr}
+                    \bfig
+                        \square|alra|/->`->`<-`->/<1000,500>[
+                            FA \otimes ' I'`
+                            FA`
+                            FA \otimes ' FI`
+                            F(A \otimes I);
+                            \rho'`
+                            FA \otimes ' m`
+                            F\rho`
+                            m
+                        ]
+                    \efig
+                    &
+                    \bfig
+                        \square|alra|/->`->`<-`->/<1000,500>[
+                            I' \otimes ' FB`
+                            FB`
+                            FI \otimes FB`
+                            F(I \otimes B);
+                            \gamma '`
+                            m \otimes ' FB`
+                            F\gamma`
+                            m
+                        ]
+                    \efig
+                \end{array}
+            \end{array}
+        \end{math}
+    \end{center}
+    \cite{mellies2009}
+\end{definition}
+
+
+\begin{definition}
+\label{def:oplax_monoidal_functor}
+    An oplax(colax/comonoidal) monoidal functor $(F,n)$ between monoidal categories $(\mathbb{C}, \otimes, I)$ and
+    $(\mathbb{D}, \otimes ', I')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{D}$ and natural transformations
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                n_{A,B}' : F(A \otimes B) \rightarrow FA \otimes ' FB & n'' : FI \rightarrow I'
+            \end{array}
+        \end{math}
+    \end{center}
+    where the following diagrams commute in the category $\mathbb{D}$, for all objects $A,B,C \in \mathbb{C}$
+    \begin{center}
+        \begin{math}
+            \begin{array}{c}
+                \bfig
+                \square|alrr|/->`->`->`/<1500,500>[
+                    F((A \otimes B)\otimes C)`
+                    F(A \otimes (B \otimes C))`
+                    F(A \otimes B) \otimes ' FC`
+                    FA \otimes ' F(B \otimes C);
+                    F \alpha`
+                    n`
+                    n`
+                ]
+                \square(0,-500)|alrb|/`->`->`->/<1500,500>[
+                    F(A \otimes B) \otimes ' FC`
+                    FA \otimes ' F(B \otimes C)`
+                    (FA \otimes ' FB) \otimes ' FC`
+                    FA \otimes ' (FB \otimes ' FC);
+                    `
+                    n \otimes ' FC`
+                    FA \otimes ' n`
+                    \alpha '
+                ]
+                \efig
+                \\\\
+                \begin{array}{lr}
+                    \bfig
+                        \square|alra|/->`->`<-`->/<1000,500>[
+                            F(A \otimes I)`
+                            FA`
+                            FA \otimes ' FI`
+                            FA \otimes ' I';
+                            F\rho`
+                            n`
+                            \rho '`
+                            FA \otimes ' n
+                        ]
+                    \efig
+                    &
+                    \bfig
+                        \square|alra|/->`->`<-`->/<1000,500>[
+                            F(I \otimes B)`
+                            FB`
+                            FI \otimes ' FB`
+                            I' \otimes ' FB;
+                            F\gamma`
+                            n`
+                            \gamma '`
+                            n \otimes ' FB
+                        ]
+                    \efig
+                \end{array}
+            \end{array}
+        \end{math}
+    \end{center}
+    \cite{mellies2009}
 \end{definition}
