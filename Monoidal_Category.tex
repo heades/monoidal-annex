@@ -200,3 +200,108 @@
     \end{center}
     \cite{mellies2009}
 \end{definition}
+
+
+
+\begin{definition}
+\label{def:monoidal_natural_transformation}
+$(F,m)$ and $(G,n)$ are (lax) monoidal functors between the monoidal categories:
+\begin{center}
+    \begin{math}
+        (\mathbb{C}, \otimes, I) \rightarrow (\mathbb{D}, \otimes ', I')
+    \end{math}
+\end{center}
+A monoidal natural transformation
+\begin{center}
+    \begin{math}
+        \theta : (F,m) \Rightarrow (G,n) : (\mathbb{C}, \otimes, I) \rightarrow (\mathbb{D}, \otimes ', I')
+    \end{math}
+\end{center}
+between the monoidal functors $(F,m)$ and $(G,n)$ is a naural transformation
+\begin{center}
+    \begin{math}
+        \theta : F \Rightarrow G : \mathbb{C} \rightarrow \mathbb{D}
+    \end{math}
+\end{center}
+between the underlying functors, where the following diamgrams commute, for all objects $A,B \in \mathbb{C}$
+\begin{center}
+    \begin{math}
+        \begin{array}{lr}
+            \bfig
+                \square|alrb|<1000,500>[
+                    FA \otimes ' FB`
+                    GA \otimes ' GB`
+                    F(A \otimes B)`
+                    G(A \otimes B);
+                    \theta_A \otimes ' \theta_B`
+                    m`
+                    n`
+                    \theta_{A \otimes B}
+                ]
+            \efig
+            &
+            \bfig
+                \Atriangle<500,600>[
+                    I'`
+                    FI`
+                    GI;
+                    m`
+                    n`
+                    \theta_I
+                ]
+            \efig
+        \end{array}
+    \end{math}
+\end{center}
+\cite{mellies2009}
+\end{definition}
+
+
+\begin{definition}
+\label{def:oplax_monoidal_natural_transformation}
+    A monoidal natural transformation
+    \begin{center}
+        \begin{math}
+            \theta : (F,m) \Rightarrow (G,n) : (\mathbb{C}, \otimes, I) \rightarrow (\mathbb{D}, \otimes ', I')
+        \end{math}
+    \end{center}
+    between two oplax(colax/comonoidal) monoidal functors $(F,m)$ and $(G,n)$ is a natural transformation
+    \begin{center}
+        \begin{math}
+            \theta : F \Rightarrow G : \mathbb{C} \rightarrow \mathbb{D}
+        \end{math}
+    \end{center}
+    between the underlying functors, where the following diagrmas commute, for all objects $A,B \in \mathbb{C}$
+    \begin{center}
+        \begin{math}
+            \begin{array}{rl}
+                \bfig
+                    \square<1000,500>[
+                        F(A \otimes B)`
+                        G(A \otimes B)`
+                        FA \otimes ' FB`
+                        GA \otimes ' GB;
+                        \theta_{A \otimes B}`
+                        m`
+                        n`
+                        \theta_A \otimes ' \theta_B
+                    ]
+                \efig
+                &
+                \bfig
+                    \Vtriangle<500,600>[
+                        FI`
+                        GI`
+                        I';
+                        \theta_I`
+                        m`
+                        n
+                    ]
+                \efig
+            \end{array}
+        \end{math}
+    \end{center}
+    \cite{mellies2009}
+\end{definition}
+
+
