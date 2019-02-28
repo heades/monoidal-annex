@@ -310,3 +310,43 @@ between the underlying functors, where the following diamgrams commute, for all 
     A monoidal category $\mathbb{C}$ is said to be biclosed if every $- \otimes Y$ has a right adjoint $[Y,-]$ and every 
     $X \otimes -$ has a right adjoint $\interp{X,-}$ \cite{kelly1982}
 \end{definition}
+
+
+\begin{definition}
+\label{def:monoidal_adjunction}
+    Given a pair of (lax) monoidal functors:
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                (F_*,m) : (\mathbb{C}, \otimes, I) \rightarrow (\mathbb{D}, \otimes ' , I')
+                &
+                (F^*, n) : (\mathbb{D}, \otimes ', I') \rightarrow (\mathbb{C},\otimes,I).
+            \end{array}
+        \end{math}
+    \end{center}
+    A monoidal adjunction
+    \begin{center}
+        \begin{math}
+            (F_*,m) \dashv (F^*, n)
+        \end{math}
+    \end{center}
+    between the monoidal functors is defined as an adjunction $(F_*,F^*,\eta,\epsilon)$ between the underlying functors
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                F_* : \mathbb{C} \rightarrow \mathbb{D}
+                &
+                F^* : \mathbb{D} \rightarrow \mathbb{C}
+            \end{array}
+        \end{math}
+    \end{center}
+    whose natural transformations 
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                \eta : id_C \Rightarrow F^* \circ F_* & \epsilon : F_* \circ F^* \Rightarrow id_D
+            \end{array}
+        \end{math}
+    \end{center}
+    are monoidal \cite{mellies2009}
+\end{definition}
