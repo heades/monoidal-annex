@@ -289,3 +289,31 @@
     \end{enumerate}
     \cite{bierman1993}
 \end{definition}
+
+
+\begin{definition}
+    An oplax monoidal functor
+    \begin{center}
+        \begin{math}
+            (F,n) : (\mathbb{C}, \otimes, I) \rightarrow (\mathbb{D}, \otimes ', I')
+        \end{math}
+    \end{center}
+    is symmetric when the following diagram commutes in the category $\mathbb{D}$ for all objects $A,B \in \mathbb{C}$
+    \begin{center}
+        \begin{math}
+            \bfig
+                \square<1000,500>[
+                    F(A \otimes B)`
+                    F(B \otimes A)`
+                    FA \otimes ' FB`
+                    FB \otimes ' FA;
+                    F_\gamma`
+                    n`
+                    n`
+                    \gamma '
+                ]
+            \efig
+        \end{math}
+    \end{center}
+    \cite{mellies2009}
+\end{definition}
