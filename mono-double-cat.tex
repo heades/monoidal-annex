@@ -1,0 +1,68 @@
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\mto}{\to}
+
+\begin{definition}
+  \label{def:lax-monoidal-multifunctors}
+  A \emph{lax monoidal multifunctor} from $(\cat{C}_1,\ldots,\cat{C}_n)$ to $\cat{D}$ is a functor:
+  \[
+  F : \cat{C}_1 \times \cdots \times \cat{C}_n \mto \cat{D}
+  \]
+  such that:
+  \begin{itemize}
+  \item Each functor,
+    $(F^i, m^i(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}}), m^i_{I_i}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}})$
+    defined by
+    $F^i(X) = F(\overrightarrow{A_1},X,\overrightarrow{A_{i+1}}) : \cat{C}_i \mto \cat{D}$,
+    for $1 \leq i \leq n$ is lax monoidal.
+  \item The following equations hold for any $1 \leq i < j \leq n$:
+    \begin{itemize}
+    \item $m_{I_i}(\overrightarrow{I_1},-,\overrightarrow{I_{i+1}}) = m_{I_j}(\overrightarrow{I_1},-,\overrightarrow{I_{i+1}})$,
+    \item
+      \begin{math}
+        \begin{array}{lll}
+          \\
+          (m^i_{I_i}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}},X,\overrightarrow{A_{j+1}}) \otimes m^i_{I_i}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}},Y,\overrightarrow{A_{j+1}}));m^j_{X,Y}(\overrightarrow{A_1},I_i,\overrightarrow{A_{i+1}},-,\overrightarrow{A_{j+1}}) \\ = \iota;m^{i}_{I_i}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}},X \otimes Y,\overrightarrow{A_{j+1}})
+        \end{array}
+      \end{math}
+
+    \item \begin{math}
+        \begin{array}{lll}
+          \\
+          (m^j_{I_j}(\overrightarrow{A_1},X,\overrightarrow{A_{i+1}},-,\overrightarrow{A_{j+1}}) \otimes m^j_{I_j}(\overrightarrow{A_1},Y,\overrightarrow{A_{i+1}},-,\overrightarrow{A_{j+1}}));m^i_{X,Y}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}},I_j,\overrightarrow{A_{j+1}}) \\ = \iota;m^{j}_{I_j}(\overrightarrow{A_1},X \otimes Y,\overrightarrow{A_{i+1}},-,\overrightarrow{A_{j+1}})
+        \end{array}
+    \end{math}
+    \end{itemize}    
+  \end{itemize}
+\end{definition}
+\noindent
+In the above definition $\iota$ is the isomorphism $\iota : I \otimes I \mto I$ which holds in any monoidal category.
+
+\begin{definition}
+  \label{def:lax-monoidal-multifunctors}
+  A \emph{symmetric lax monoidal multifunctor} from $(\cat{C}_1,\ldots,\cat{C}_n)$ to $\cat{D}$ is a lax monoidal multifunctor
+  \[F : (\cat{C}_1,\ldots,\cat{C}_n) \mto \cat{D}\]
+  such that:
+  \begin{itemize}
+  \item Each functor,
+    $(F^i, m^i(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}}), m^i_{I_i}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}})$
+    defined by
+    $F^i(X) = F(\overrightarrow{A_1},X,\overrightarrow{A_{i+1}}) : \cat{C}_i \mto \cat{D}$,
+    for $1 \leq i \leq n$ is symmetric lax monoidal.
+  \item The following additional coherence axiom holds for any $1 \leq i < j \leq n$:
+    \begin{itemize}
+      \vspace{-10px}
+    \item \begin{math}
+      \begin{array}{lll}
+        \\
+        (m^i_{X,Y}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}},P,\overrightarrow{A_{j+1}}) \otimes m^i_{X,Y}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}},Q,\overrightarrow{A_{j+1}}));m^j_{P,Q}(\overrightarrow{A_1},X \otimes Y,\overrightarrow{A_{i+1}},-,\overrightarrow{A_{j+1}}) \\
+        = \tau;(m^j_{P,Q}(\overrightarrow{A_1},X,\overrightarrow{A_{i+1}},-,\overrightarrow{A_{j+1}}) \otimes m^j_{P,Q}(\overrightarrow{A_1},Y,\overrightarrow{A_{i+1}},-,\overrightarrow{A_{j+1}}));m^{i}_{X,Y}(\overrightarrow{A_1},-,\overrightarrow{A_{i+1}},P \otimes Q,\overrightarrow{A_{j+1}})
+      \end{array}
+    \end{math}
+    \end{itemize}
+  \end{itemize}
+\end{definition}
+\noindent
+In the above definition $\tau$ is the isomorphism
+$\tau : (A \otimes B) \otimes (C \otimes D) \mto (A \otimes C) \otimes (B \otimes D)$
+which holds in any monoidal category.
+
