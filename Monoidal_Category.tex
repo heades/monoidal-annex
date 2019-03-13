@@ -63,12 +63,16 @@
 \begin{definition}
 \label{def:monoidal_functor}
     A monoidal functor or lax monoidal functor $(F,m)$ between monoidal categories $(\mathbb{C}, \otimes, I)$ and
-    $(\mathbb{D}, \otimes ', I')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{D}$ equipped with nathral transformations
+    $(\mathbb{D}, \otimes ', I')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{D}$ equipped with a nathral transformation
     \begin{center}
         \begin{math}
-            \begin{array}{lr}
-                m_{A,B}' : FA \otimes ' FB \rightarrow F(A \otimes B) & m'' : I' \rightarrow FI
-            \end{array}
+            m_{A,B} : FA \otimes ' FB \rightarrow F(A \otimes B) 
+        \end{math}
+    \end{center}
+    and an isomorphism
+    \begin{center}
+        \begin{math}
+            m_I : I' \rightarrow FI
         \end{math}
     \end{center}
     where the following diagrams commute in the category $\mathbb{D}$ for all objects $A,B,C \in \mathbb{C}$
@@ -133,13 +137,17 @@
 
 \begin{definition}
 \label{def:oplax_monoidal_functor}
-    An oplax(colax/comonoidal) monoidal functor $(F,n)$ between monoidal categories $(\mathbb{C}, \otimes, I)$ and
-    $(\mathbb{D}, \otimes ', I')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{D}$ and natural transformations
+    An oplax(colax/comonoidal) monoidal functor $(F,m)$ between monoidal categories $(\mathbb{C}, \otimes, I)$ and
+    $(\mathbb{D}, \otimes ', I')$ is a functor $F:\mathbb{C} \rightarrow \mathbb{D}$ with a natural transformation
     \begin{center}
         \begin{math}
-            \begin{array}{lr}
-                n_{A,B}' : F(A \otimes B) \rightarrow FA \otimes ' FB & n'' : FI \rightarrow I'
-            \end{array}
+            m_{A,B} : F(A \otimes B) \rightarrow FA \otimes ' FB 
+        \end{math}
+    \end{center}
+    and an isomorphism
+    \begin{center}
+        \begin{math}
+            m_I : FI \rightarrow I'
         \end{math}
     \end{center}
     where the following diagrams commute in the category $\mathbb{D}$, for all objects $A,B,C \in \mathbb{C}$
@@ -153,8 +161,8 @@
                     F(A \otimes B) \otimes ' FC`
                     FA \otimes ' F(B \otimes C);
                     F \alpha`
-                    n`
-                    n`
+                    m`
+                    m`
                 ]
                 \square(0,-500)|alrb|/`->`->`->/<1500,500>[
                     F(A \otimes B) \otimes ' FC`
@@ -162,8 +170,8 @@
                     (FA \otimes ' FB) \otimes ' FC`
                     FA \otimes ' (FB \otimes ' FC);
                     `
-                    n \otimes ' FC`
-                    FA \otimes ' n`
+                    m \otimes ' FC`
+                    FA \otimes ' m`
                     \alpha '
                 ]
                 \efig
@@ -176,9 +184,9 @@
                             FA \otimes ' FI`
                             FA \otimes ' I';
                             F\rho`
-                            n`
+                            m`
                             \rho '`
-                            FA \otimes ' n
+                            FA \otimes ' m
                         ]
                     \efig
                     &
@@ -189,9 +197,9 @@
                             FI \otimes ' FB`
                             I' \otimes ' FB;
                             F\gamma`
-                            n`
+                            m`
                             \gamma '`
-                            n \otimes ' FB
+                            m \otimes ' FB
                         ]
                     \efig
                 \end{array}
@@ -205,7 +213,7 @@
 
 \begin{definition}
 \label{def:monoidal_natural_transformation}
-$(F,m)$ and $(G,n)$ are (lax) monoidal functors between the monoidal categories:
+Suppose $(F,m)$ and $(G,n)$ are (lax) monoidal functors between the monoidal categories:
 \begin{center}
     \begin{math}
         (\mathbb{C}, \otimes, I) \rightarrow (\mathbb{D}, \otimes ', I')

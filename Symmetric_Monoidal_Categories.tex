@@ -1,41 +1,15 @@
 \begin{definition}
     \label{def:symmetric_monoidal_category}
-    A symmetric monoidal catergory (SMC), $(\mathbb{C},\otimes,I,\alpha,\lambda,\rho,\gamma)$, is a category $\mathbb{C}$ 
-    equippped with a bifunctor $\otimes:\mathbb{C}\times\mathbb{C}\rightarrow\mathbb{C}$ with a neutral element I and natural isomorphisms 
-    $\alpha, \lambda, \rho,$ and $\gamma$:
-    \begin{enumerate}
-        \item $\alpha_{A,B,C} : A \otimes (B \otimes C) \xrightarrow{\sim} (A \otimes B) \otimes C$
-        \item $\lambda_A : I \otimes A \xrightarrow{\sim} A$
-        \item $\rho_A : A \otimes I \xrightarrow{\sim} A$
-        \item $\gamma_{A,B} : A \otimes B \xrightarrow{\sim} B \otimes A$
-    \end{enumerate}
-    which make the following 'coherence' diagrams commute.
+    A symmetric monoidal catergory (SMC), is a monoidal category $\mathbb{C}$ with an additional natural isomorphism $\gamma$
     \begin{center}
         \begin{math}
-            \begin{array}{c}
-                \bfig
-                \ptriangle|all|/->`->`/<1500,500>[
-                    A \otimes (B \otimes (C \otimes D))`
-                    (A \otimes B) \otimes (C \otimes D)`
-                    A \otimes ((B \otimes C)\otimes D);
-                    \alpha_{A,B,C \otimes D}`
-                    id_A \otimes \alpha_{B,C,D}`
-                ]
-                \qtriangle(1500,0)|alr|/->``<-/<1500,500>[
-                    (A \otimes B) \otimes (C \otimes D)`
-                    ((A \otimes B)\otimes C)\otimes D`
-                    (A \otimes (B \otimes C))\otimes D;
-                    \alpha_{A \otimes B,C,C}`
-                    `
-                    \alpha_{A,B,C} \otimes id_D
-                    ]
-                \morphism|b|/->/<3000,0>[
-                    A \otimes ((B \otimes C)\otimes D)`
-                    (A \otimes(B \otimes C))\otimes D;
-                    \alpha_{A,B \otimes C,D}
-                    ]
-                \efig
-                \\\\
+            \gamma_{A,B} : A \otimes B \xrightarrow{\sim} B \otimes A
+        \end{math}
+    \end{center}
+    and three additional 'coherence' diagrams that commute.
+    \begin{center}
+        \begin{math}
+            \begin{array}{c}            
                 \bfig
                 \square|alrb|/->`->``->/<1000,500>[
                     (A \otimes B) \otimes C`
@@ -59,18 +33,7 @@
                 ]
                 \efig
                 \\\\
-                \begin{array}{lr}
-                    \bfig
-                    \square|alrr|/->`->`->`=/<1000,500>[
-                        A \otimes (I \otimes B)`
-                        (A \otimes I) \otimes B`
-                        A \otimes B`
-                        A \otimes B;
-                        \alpha_{A,I,B}`
-                        id_A \otimes \lambda_B`
-                        \rho_A \otimes id_B`]
-                    \efig
-                    &
+                \begin{array}{lr}                    
                     \bfig
                     \qtriangle|abr|/->`=`->/[
                         A \otimes B`
@@ -79,19 +42,20 @@
                         \gamma_{A,B}`
                         `
                         \gamma_{B,A}]
+                    \efig
+                    &
+                    \bfig
+                    \square|alrb|/->`->`->`=/[
+                        A \otimes I`
+                        I \otimes A`
+                        A`
+                        A;
+                        \gamma_{A,I}`
+                        \rho_A`
+                        \lambda_A`
+                        ]
                     \efig                    
-                \end{array}\\\\
-                \bfig
-                \square|alrb|/->`->`->`=/[
-                    A \otimes I`
-                    I \otimes A`
-                    A`
-                    A;
-                    \gamma_{A,I}`
-                    \rho_A`
-                    \lambda_A`
-                    ]
-                \efig
+                \end{array}
             \end{array}
         \end{math}
     \end{center}
@@ -295,7 +259,7 @@
     An oplax monoidal functor
     \begin{center}
         \begin{math}
-            (F,n) : (\mathbb{C}, \otimes, I) \rightarrow (\mathbb{D}, \otimes ', I')
+            (F,m) : (\mathbb{C}, \otimes, I) \rightarrow (\mathbb{D}, \otimes ', I')
         \end{math}
     \end{center}
     is symmetric when the following diagram commutes in the category $\mathbb{D}$ for all objects $A,B \in \mathbb{C}$
@@ -308,8 +272,8 @@
                     FA \otimes ' FB`
                     FB \otimes ' FA;
                     F_\gamma`
-                    n`
-                    n`
+                    m`
+                    m`
                     \gamma '
                 ]
             \efig
