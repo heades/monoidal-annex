@@ -1,0 +1,72 @@
+\begin{definition}
+\label{def:monoidal_double_category}
+    The strict double category $\mathbb{D}$ has a full double subcategory $\mathbb{M}$ of monoidal categoreis.
+    These are viewd as:
+    \begin{itemize}
+        \item vertical double categories on a formal object $*$
+        \item vertical arrows $A: * \rightarrow *$
+        \item cells $a:A \rightarrow A'$
+    \end{itemize}
+    The horizontal arrows of $\mathbb{M}$ are monoidal functors(lax with respect to tensor product) and the vertical arrows 
+    are comonoidal functors(colax). A cell $\alpha:(F RS G)$ associates to every object A in $\mathbb{A}$ with an arrow
+    $\alpha A: GRA \rightarrow SFA$ in $\mathbb{D}$ which satisfies the naturality condition
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                (GRa | \alpha v) = (\alpha u | SFa) & (\text{for } a:(u fg v) \text{ in } \mathbb{A})
+            \end{array}
+        \end{math}
+    \end{center}
+    and the coherence conditions
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                (C\rho A | \alpha I | S \varphi A) = (\gamma RA | I | \sigma FA) & (\text{for a in }\mathbb{A})\\
+                (G\rho (u,v) | \alpha w | S \varphi (u,v)) = (\gamma (Ru,Rv) | (\alpha u \otimes \alpha v) | \sigma (Fu,Fv)) & (\text{for }w = u\otimes v \text{ in } \mathbb{A})
+            \end{array}
+        \end{math}
+    \end{center}
+    and have the following diagrmas
+    \begin{center}
+        \begin{math}
+            \begin{array}{lr}
+                \bfig
+                    \square<500,300>[
+                        GRA`
+                        SFA`
+                        GRA'`
+                        SFA';
+                        \alpha A`
+                        GRa`
+                        SFa`
+                        \alpha A'
+                    ]
+                \efig
+                & 
+                \bfig
+                    \Atriangle|lrb|/<-``->/<300,300>[
+                        GRI`
+                        GI`
+                        I;
+                        G\rho`
+                        `
+                        \gamma
+                    ]
+                    \Atriangle(600,0)|lrb|/`->`->/<300,300>[
+                        SFI`
+                        I`
+                        SI;
+                        `
+                        S\varphi`
+                        \sigma
+                    ]
+                    \morphism(300,300)|a|<600,0>[
+                        GRI`
+                        SFI;
+                        \alpha I
+                    ]
+                \efig
+            \end{array}
+        \end{math}
+    \end{center}
+\end{definition}
