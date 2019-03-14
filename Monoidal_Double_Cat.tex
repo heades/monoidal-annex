@@ -21,15 +21,15 @@
     \begin{center}
         \begin{math}
             \begin{array}{lr}
-                (C\rho A | \alpha I | S \varphi A) = (\gamma RA | I | \sigma FA) & (\text{for a in }\mathbb{A})\\
+                (C\rho A | \alpha I | S \varphi A) = (\gamma RA | I | \sigma FA) & (\text{for a in }\mathbb{A})\\\\
                 (G\rho (u,v) | \alpha w | S \varphi (u,v)) = (\gamma (Ru,Rv) | (\alpha u \otimes \alpha v) | \sigma (Fu,Fv)) & (\text{for }w = u\otimes v \text{ in } \mathbb{A})
             \end{array}
         \end{math}
     \end{center}
-    and have the following diagrmas
+    and have the following diagrams
     \begin{center}
         \begin{math}
-            \begin{array}{lr}
+            \begin{array}{cc}
                 \bfig
                     \square<500,300>[
                         GRA`
@@ -66,6 +66,40 @@
                         \alpha I
                     ]
                 \efig
+                \\\\
+                \begin{array}{c}
+                    \bfig
+                        \square|alrb|/->`<-`->`/<1000,500>[
+                            GR(A \otimes A')`
+                            SF(A \otimes A')`
+                            G(RA \otimes RA')`
+                            S(FA \otimes FA');
+                            \alpha(A \otimes A')`
+                            G\rho`
+                            S\varphi`
+                        ]
+                        \square(0,-500)|alrb|/`->`<-`->/<1000,500>[
+                            G(RA \otimes RA')`
+                            S(FA \otimes FA')`
+                            GRA \otimes GRA'`
+                            SFA \otimes SFA';
+                            `
+                            \gamma R`
+                            \sigma F`
+                            \alpha A \otimes \alpha A'
+                        ]
+                    \efig
+                \end{array}
+            \end{array}
+        \end{math}
+    \end{center}
+    where the lax monoidal functor R has comparison arrows 
+    \begin{center}
+        \begin{math}
+            \begin{array}{l}
+                \rho = \rho (*): I \rightarrow RI
+                \\
+                \rho(A, A'): RA \otimes RA' \rightarrow R(A \otimes A')
             \end{array}
         \end{math}
     \end{center}
