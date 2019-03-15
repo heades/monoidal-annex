@@ -1,0 +1,11 @@
+\begin{definition}
+\label{def:monoidal_monad}
+    Let $\mathbb{C}=(C,\otimes,I)$ be a monoidal category.  A monoidal monad $\mathbb{T} = (T,\mu,\eta)$ is a monad in the 2-category of:
+    \begin{enumerate}
+        \item monoidal categories
+        \item monoidal functors
+        \item monoidal transformations
+    \end{enumerate}
+    where the functor $T:C \rightarrow C$ comes with maps $\kappa = (\kappa_{X,Y}: TX \otimes TY \rightarrow T(X \otimes Y))_{X,Y \in ob\, C}$
+    that make $(T,\kappa,\eta_I)$ a monoidal functor and $\mu,\eta$ monoidal natural transformations \cite{seal2013}
+\end{definition}
